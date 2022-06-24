@@ -6,8 +6,8 @@ from sgtpyutils.logger import logger
 from sgtpyutils.xls_txt.list import list2sheet
 
 
-libc_all_in_one=f'/home/kali/Desktop/glibc-all-in-one/libs'
-start_path=f'/home/kali/Desktop'
+libc_all_in_one=f'xxx' # the path of the glibc-all-in-one
+start_path=f'xxx' #the path of the elf file
 
 def process_cmd(cmd):
     logger.info(f'exec command: {cmd}')
@@ -61,7 +61,7 @@ if __name__ == '__main__':
         libc_list= list2sheet(libc_list, max_show_count=20)
         description = ['\navaliable libc list:']
         description.append('\n'.join(libc_list))
-        logger.debug('\n'.join(description))
+        logger.info('\n'.join(description))
         sys.exit(0)
 
     process_patchelf(
